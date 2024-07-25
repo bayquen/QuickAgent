@@ -1,3 +1,7 @@
+import os      #added by Brandon for api key
+from dotenv import load_dotenv, dotenv_values 
+
+
 import asyncio
 from dotenv import load_dotenv
 
@@ -10,6 +14,9 @@ from deepgram import (
 )
 
 load_dotenv()
+# Added by Brandon (line below):
+os.getenv("DEEPGRAM_API_KEY")
+
 
 class TranscriptCollector:
     def __init__(self):
