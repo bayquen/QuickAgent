@@ -1,4 +1,4 @@
-import os      #added by Brandon for api key
+import os      # added by Brandon for Deepgram API key
 from dotenv import load_dotenv, dotenv_values 
 
 
@@ -14,8 +14,8 @@ from deepgram import (
 )
 
 load_dotenv()
-# Added by Brandon (line below):
-os.getenv("DEEPGRAM_API_KEY")
+
+os.getenv("DEEPGRAM_API_KEY")   # Line added by Brandon
 
 
 class TranscriptCollector:
