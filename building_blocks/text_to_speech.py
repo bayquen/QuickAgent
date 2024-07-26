@@ -45,7 +45,7 @@ def send_tts_request(text):
     DEEPGRAM_URL = f"https://api.beta.deepgram.com/v1/speak?model={MODEL_NAME}&performance=some&encoding=linear16&sample_rate=24000"
     
     headers = {
-        "Authorization": f"Token {DEEPGRAM_API_KEY}",       # edited line by Brandon - API key variable
+        "Authorization": f"Token {'DEEPGRAM_API_KEY'}",       # edited line by Brandon - API key variable
         "Content-Type": "application/json"
     }
     
