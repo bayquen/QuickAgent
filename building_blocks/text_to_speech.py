@@ -6,6 +6,7 @@ import shutil
 import time
 from deepgram import Deepgram
 
+# os.environ['PATH'] += os.pathsep + '/path/to/ffmpeg/bin/'   # Brandon's Note: added for ffmpeg and pyaudio error
 # brew install portaudio
 
 # Load environment variables
@@ -45,7 +46,7 @@ def send_tts_request(text):
     DEEPGRAM_URL = f"https://api.beta.deepgram.com/v1/speak?model={MODEL_NAME}&performance=some&encoding=linear16&sample_rate=24000"
     
     headers = {
-        "Authorization": f"Token {'DEEPGRAM_API_KEY'}",       # edited line by Brandon - API key variable
+        "Authorization": f"Token {DG_API_KEY}",
         "Content-Type": "application/json"
     }
     

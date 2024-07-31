@@ -1,3 +1,6 @@
+# (Slightly) Modified code by Brandon B. & Nathan B.
+# Last updated: 7/31/2024 @ 12pm Seoul Time
+
 import asyncio
 from dotenv import load_dotenv
 import shutil
@@ -30,8 +33,10 @@ load_dotenv()
 
 class LanguageModelProcessor:
     def __init__(self):
-        self.llm = ChatGroq(temperature=0, model_name="mixtral-8x7b-32768", groq_api_key=os.getenv("GROQ_API_KEY"))
-        # self.llm = ChatOpenAI(temperature=0, model_name="gpt-4-0125-preview", openai_api_key=os.getenv("OPENAI_API_KEY"))
+        # self.llm = ChatGroq(temperature=0, model_name="mixtral-8x7b-32768", groq_api_key=os.getenv("GROQ_API_KEY"))
+        
+        # Modified by Nathan B: CHANGED GROQ to OpenAI model for LLM processing of voice bot
+        self.llm = ChatOpenAI(temperature=0, model_name="gpt-4-0125-preview", openai_api_key=os.getenv("OPENAI_API_KEY"))
         # self.llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo-0125", openai_api_key=os.getenv("OPENAI_API_KEY"))
 
         self.memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
@@ -205,7 +210,11 @@ class ConversationManager:
             # Check for "goodbye" to exit the loop
             if "goodbye" in self.transcription_response.lower():
                 break
+            # Added line by Nathan - check if voice successful with a key word
+            if "category" in self.transcription_response.lower():
+                print("Successful")
             
+            # [!!!!!] Note by Brandon B: Figure out how to add a feature that notifies the user that AI is listening.
             llm_response = self.llm.process(self.transcription_response)
 
             tts = TextToSpeech()
