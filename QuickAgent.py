@@ -1,5 +1,5 @@
-# (Slightly) Modified code by Brandon B. & Nathan B.
-# Last updated: 7/31/2024 @ 12pm Seoul Time
+# (Slightly) Modified code by Brandon Bayquen & Nathan Bao
+# Last modified: 8/1/2024 @ 10am KST (South Korea)
 
 import asyncio
 from dotenv import load_dotenv

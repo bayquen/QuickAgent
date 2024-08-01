@@ -1,3 +1,6 @@
+# Author: Brandon Bayquen
+# Last modified: 8/1/2024 @ 10am KST (South Korea)
+
 from flask import Flask, render_template, redirect, url_for
 import subprocess
 
