@@ -10,7 +10,7 @@ import time
 import os
 
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_groq import ChatGroq
+# from langchain_groq import ChatGroq       # Note by Brandon B: Replaced with OpenAI LLM for our project use case.
 from langchain_openai import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.prompts import (
