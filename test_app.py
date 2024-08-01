@@ -9,7 +9,7 @@ app = Flask(__name__)
 # Route for the home page
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('indextest1.html')
 
 # Route to trigger the Python script
 @app.route('/run-script')
