@@ -211,11 +211,11 @@ class ConversationManager:
             # Check for "goodbye" to exit the loop
             if "goodbye" in self.transcription_response.lower():
                 break
-            # Added line by Nathan - check if voice successful with a key word
+            # Added line by Nathan - check if voice successful with a user key word, "category"
             if "category" in self.transcription_response.lower():
                 print("Successful")
             
-            # [!!!!!] Note by Brandon B: Figure out how to add a feature that notifies the user that AI is listening.
+            # [!!!!!] Note by Brandon B: Figure out how to add a feature that indicates to the user that the AI voicebot is listening.
             llm_response = self.llm.process(self.transcription_response)
 
             tts = TextToSpeech()
